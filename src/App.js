@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-// import { withAuthenticator } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-	<h1>Hello from V2</h1>
+	<h1>Hello from V3</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -24,5 +24,5 @@ function App() {
   );
 }
 
-export default App;
-// export default withAuthenticator(App);
+// export default App;
+export default withAuthenticator(App);
