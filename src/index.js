@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// import { Amplify } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 
-// Amplify.configure({
-//   Auth: {
-//       region: 'us-west-2',
-//       userPoolId: 'us-west-2_4EaKYUnj7',
-//       userPoolWebClientId: '4achf6nr6fb27q0rcujalqe4fh'
-//   }
-// });
+Amplify.configure({
+  Auth: {
+      region: 'us-west-2',
+      userPoolId: 'us-west-2_4EaKYUnj7',
+      userPoolWebClientId: '4achf6nr6fb27q0rcujalqe4fh'
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
