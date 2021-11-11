@@ -6,10 +6,18 @@ import { Auth } from 'aws-amplify';
 
 function App() {
   Auth.currentCredentials().then(console.log);
+  Auth.currentSession()
+  .then(user => {
+    const { payload } = user.getIdToken()
+    if (payload && payload['cognito:groups'] ) {
+      console.log(payload['cognito:groups'])
+    }
+  })
+
   return (
     <div className="App">
       <header className="App-header">
-	<h1>Hello from V8</h1>
+	<h1>Hello from V9</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
