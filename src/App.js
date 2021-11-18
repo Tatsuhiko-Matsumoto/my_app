@@ -1,8 +1,17 @@
 import React from 'react';
 import './App.css';
 import logo from './logo.svg';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { AmplifyAuthenticator, AmplifySignIn } from "@aws-amplify/ui-react";
+
+import {
+  withAuthenticator,
+  AmplifyAuthenticator,
+  AmplifySignIn,
+  AmplifyForgotPassword,
+  AmplifySignUp,
+  AmplifySignOut,
+  AmplifyConfirmSignUp,
+  AmplifyRequireNewPassword,
+} from "@aws-amplify/ui-react";
 
 import { Auth } from 'aws-amplify';
 
