@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 // import { withAuthenticator } from '@aws-amplify/ui-react';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+// AmplifySignInをimport
+import { AmplifyAuthenticator, AmplifySignIn } from "@aws-amplify/ui-react";
+
 import { Auth } from 'aws-amplify';
 
 function App() {
@@ -15,9 +18,29 @@ function App() {
   })
 
   return (
+    <AmplifyAuthenticator>
+    <AmplifySignIn
+      slot="sign-in"
+      headerText="GARDEN 審査サービス サインイン画面"
+      submitButtonText="サインイン"
+      formFields={[
+        {
+          type: "username",
+          label: "サインインID *",
+          placeholder: "ユーザ名を入力",
+          required: true,
+        },
+        {
+          type: "password",
+          label: "パスワード *",
+          placeholder: "パスワードを入力",
+          required: true,
+        },
+      ]}
+    />
     <div className="App">
       <header className="App-header">
-	<h1>Hello from V9</h1>
+        <h1>Hello from V10</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -33,6 +56,7 @@ function App() {
         <AmplifySignOut />
       </header>
     </div>
+    </AmplifyAuthenticator>
   );
 }
 
