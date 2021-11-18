@@ -13,7 +13,34 @@ import {
   AmplifyRequireNewPassword,
 } from "@aws-amplify/ui-react";
 
-import { Auth } from 'aws-amplify';
+import { Auth, I18n } from 'aws-amplify';
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+
+Amplify.configure(awsconfig);
+
+const dict = {
+  ja: {
+    "Forgot your password?": "パスワードを忘れた場合",
+    "Reset password": "パスワードをリセット",
+    "No account?": "アカウントを持っていない場合",
+    "Create account": "サインアップ",
+    "Back to Sign In": "サインインに戻る",
+    "Username *": "ユーザ名 *",
+    "Enter your username": "ユーザ名を入力",
+    "Confirmation Code": "確認コード",
+    "Enter your code": "確認コードを入力",
+    "Lost your code?": "確認コードが届かない場合",
+    "Resend Code": "再送する",
+    "Verification code": "検証コード",
+    "Enter code": "検証コードを入力",
+    "New password": "新しいパスワード",
+    "Enter your new password": "新しいパスワードを入力",
+  },
+};
+
+I18n.putVocabularies(dict);
+I18n.setLanguage("ja");
 
 function App() {
   Auth.currentCredentials().then(console.log);
@@ -94,7 +121,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <h1>Hello from V14</h1>
+        <h1>Hello from V15</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
