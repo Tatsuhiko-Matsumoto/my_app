@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+/* とりあえず全部赤で */
+:root {
+  --amplify-primary-color: #c53030;
+  --amplify-primary-tint: #c53030;
+  --amplify-primary-shade: #c53030;
+}

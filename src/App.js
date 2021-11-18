@@ -39,7 +39,7 @@ function App() {
     />
     <div className="App">
       <header className="App-header">
-        <h1>Hello from V12</h1>
+        <h1>Hello from V13</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -52,7 +52,7 @@ function App() {
         >
           Learn React
         </a>
-        <AmplifySignOut submitButtonText="サインアウト"></AmplifySignOut>
+        <button onClick={() => Auth.signOut()}>サインアウト</button>
       </header>
     </div>
     </AmplifyAuthenticator>
