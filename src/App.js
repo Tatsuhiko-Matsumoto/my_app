@@ -20,7 +20,7 @@ function App() {
     <AmplifyAuthenticator>
     <AmplifySignIn
       slot="sign-in"
-      headerText="GARDEN 審査サービス サインイン画面"
+      headerText="GARDEN審査サービス サインイン画面"
       submitButtonText="サインイン"
       formFields={[
         {
@@ -37,9 +37,55 @@ function App() {
         },
       ]}
     />
+    <AmplifyForgotPassword
+        slot="forgot-password"
+        headerText="パスワードを忘れた"
+        usernameAlias="email"
+        formFields={[
+          {
+            type: "username",
+            label: "ユーザ名を入力してください",
+            placeholder: "ユーザ名",
+          },
+        ]}
+        sendButtonText="送信"
+        submitButtonText="送信"
+      />
+      <AmplifySignUp
+        slot="sign-up"
+        headerText="GARDEN審査サービス サインアップ"
+        haveAccountText=""
+        signInText="サインインに戻る"
+        submitButtonText="アカウント作成"
+        formFields={[
+          {
+            type: "username",
+            label: "ユーザ名を入力してください",
+            placeholder: "ユーザ名",
+          },
+          {
+            type: "email",
+            label: "メールアドレスを入力してください",
+            placeholder: "メールアドレス",
+          },
+          {
+            type: "password",
+            label: "パスワードを入力してください",
+            placeholder: "パスワード",
+            inputProps: { required: true, autocomplete: "new-password" },
+          },
+        ]}
+      />
+      <AmplifyRequireNewPassword
+        headerText="新しいパスワードを入力"
+        submitButtonText="送信"
+        slot="require-new-password"
+      />
+      <AmplifyConfirmSignUp headerText="確認コードを入力してください" submitButtonText="送信" slot="confirm-sign-up" />
+
     <div className="App">
       <header className="App-header">
-        <h1>Hello from V13</h1>
+        <h1>Hello from V14</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
